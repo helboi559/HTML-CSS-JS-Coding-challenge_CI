@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="*">Login</a></li>
+            <li><a href="*">Menu</a></li>
+        </ul>
+    </nav>
+    <div class="game-container">
+        <div class="game-control">
+           
+            
+            <input type="button" value="add 1" id="inc" onclick="increaseByOne()" />
+            <label id="display"></label>
+            <input type="button" value="remove 1" id="dec" onclick="decreaseByOne()" />
+            
+          
+            
+        </div>
+        <div id="stars-display">
+            <img src="https://t3.ftcdn.net/jpg/01/21/64/88/360_F_121648819_ZQ0tZ6tjLzxim1SG7CQ86raBw4sglCzB.jpg" alt="" width="50px" >
+        </div>
+    </div>
+    <script>
+        let i = 0;
+        
+        const increaseByOne = () => {
+
+            if (i >= 0) {
+                i++;
+                const newImg = document.createElement("img");
+                newImg.src = "https://t3.ftcdn.net/jpg/01/21/64/88/360_F_121648819_ZQ0tZ6tjLzxim1SG7CQ86raBw4sglCzB.jpg"
+                document.getElementById("stars-display").appendChild(newImg)
+            }
+
+            document.getElementById("display").innerHTML = i;
+        }
+        
+
+        const  decreaseByOne = ()=> {
+            if (i > 0) {
+                i--;
+                const removeImg = document.querySelector('img')
+                removeImg.remove()
+            } 
+            document.getElementById("display").innerHTML = i;
+        }
+       
+    </script>
+</body>
+</html>
